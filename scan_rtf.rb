@@ -39,5 +39,10 @@ puts
 
 doc_words.keys.each{|word|
 
+  # remove non alpha ascii (move to lib)
+
+  a.gsub!)/[^A-Za-z]/, "")  
+
   puts "#{word}   \t\t #{dict.find_match(word)}"
+
 }

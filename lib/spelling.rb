@@ -33,7 +33,6 @@ class Spelling
   end
 
   def find_match(word)
-    
     if @dict.key?(word)
       return true
     else
