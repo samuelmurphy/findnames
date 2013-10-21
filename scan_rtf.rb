@@ -34,3 +34,8 @@ doc_words.keys.each{|cword|
   puts "#{word}   \t\t #{dict.find_match(word)}"
 
 }
+
+puts
+puts
+
+p document.capital_words
