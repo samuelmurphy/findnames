@@ -27,7 +27,7 @@
           next if line =~ /par/
           next if line =~ /^[\\}]/
           line.strip!
-          
+       p line   
           line.split.each{|word|
             @capital_words[word] = @capital_words.key?(word) ? @capital_words[word] += 1 : 1 if(word == word.capitalize)
             word.downcase!
