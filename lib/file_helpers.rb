@@ -42,7 +42,7 @@
       @capital_words
     end
 
-    def word_array
+    def all_words_frequency_hash
       @file_contents
     end
 

@@ -17,8 +17,7 @@ puts "Scanning #{filename}"
 
 document = DocumentHelper.new(filename)
 
-doc_words = document.word_array
-
+doc_words = document.all_words_frequency_hash
 
 puts "=========="
 puts
