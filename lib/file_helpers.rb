@@ -6,8 +6,6 @@
 
 #module FileHelpers
 
-print "*** FOO  ***"
-
 
   class DocumentHelper
 

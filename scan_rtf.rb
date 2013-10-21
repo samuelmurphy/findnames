@@ -1,6 +1,8 @@
 #! /usr/bin/env ruby
 
 require './lib/spelling.rb'
+require './lib/file_helpers.rb'
+
 
 dict = Spelling.new
 
@@ -13,35 +15,21 @@ puts "Scanning #{filename}"
 
 #note the regex to strip control lines is lame but may work for initial tests
 
-doc_words = {}
+document = DocumentHelper.new(filename)
 
-File.open(filename, 'r') {|file|
-  
-  file.readlines.each{|line|
- 
-    next if line =~ /^{/
-    next if line =~ /par/
-    next if line =~ /^[\\}]/
-    line.strip!
+doc_words = document.word_array
 
-    line.split.each{|word|
-      word.downcase!
-      doc_words[word] = 1
-    }
-  }
-
-}
 
 puts "=========="
 puts
 p doc_words
 puts
 
-doc_words.keys.each{|word|
+doc_words.keys.each{|cword|
 
   # remove non alpha ascii (move to lib)
 
-  a.gsub!)/[^A-Za-z]/, "")  
+  word = cword.gsub(/[^A-Za-z]/, "")  
 
   puts "#{word}   \t\t #{dict.find_match(word)}"
 
