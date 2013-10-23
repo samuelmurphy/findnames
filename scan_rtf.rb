@@ -11,6 +11,11 @@ p dict.find_match("applot")
 
 filename = ARGV[0]
 
+unless filename
+  puts "\nRequired argument missing: filename of an rtf file required\n"
+  exit
+end
+
 puts "Scanning #{filename}"
 
 #note the regex to strip control lines is lame but may work for initial tests
